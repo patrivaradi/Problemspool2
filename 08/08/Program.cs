@@ -14,20 +14,17 @@ namespace _08
         /// </summary>
         static void Main(string[] args)
         {
-            int n;
+            int n,nr1=0,nr2=1,nr=0;
             Console.WriteLine("Introduceti n, pentru al determina al n-lea numar din sirul lui Fibonacci : ");
             n = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Al {n}-lea numar din sirul lui Fibonacci este = {Fibonacci(n-1)}");
+            for (int i = 2; i < n; i++)
+            {
+                nr = nr1 + nr2;
+                nr1 = nr2;
+                nr2 = nr;
+            }
+            Console.WriteLine($"Al {n}-lea numar din sirul lui Fibonacci este = {nr}");
             Console.ReadKey();
-        }
-        static int Fibonacci(int n)
-        {
-            if (n == 0)
-                return 0;
-            else if (n == 1)
-                return 1;
-            else 
-                return Fibonacci(n - 1) + Fibonacci(n - 2);
-        }
+        }        
     }
 }
